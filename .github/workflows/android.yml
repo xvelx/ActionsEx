@@ -27,7 +27,7 @@ jobs:
     - name: Distribute to App Center
       uses: wzieba/AppCenter-Github-Action@v1
       with:
-        appName: Suryavel_TR_Artium/Action_EX
+        appName: surya.is.vel-gmail.com/ActionEx
         token: ${{ secrets.AC_TOKEN }}
-        file: app/build/outputs/apk/release/app-release-unsigned.apk
+        file: app/build/outputs/apk/release/app-release.apk
         debug: false
