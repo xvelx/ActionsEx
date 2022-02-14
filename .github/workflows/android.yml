@@ -27,7 +27,8 @@ jobs:
     - name: Distribute to App Center
       uses: wzieba/AppCenter-Github-Action@v1
       with:
-        appName: surya.is.vel-gmail.com/ActionEx
-        token: ${{ secrets.AC_TOKEN }}
+        appName: xvelx/ActionExAndroid
+        token: ${{ secrets.AC_USER_TOKEN }}
+        group: internal
         file: app/build/outputs/apk/release/app-release.apk
         debug: false
