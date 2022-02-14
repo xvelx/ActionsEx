@@ -2,9 +2,9 @@ name: Android CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [ feature/ci_test ]
   pull_request:
-    branches: [ master ]
+    branches: [ feature/ci_test ]
 
 jobs:
   build:
@@ -23,4 +23,11 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Build with Gradle
-      run: ./gradlew assembleDebug
+      run: ./gradlew clean assembleRelease
+    - name: Distribute to App Center
+      uses: wzieba/AppCenter-Github-Action@v1
+      with:
+        appName: Suryavel_TR_Artium/Action_EX
+        token: ${{ secrets.AC_TOKEN }}
+        file: app/build/outputs/apk/release/app-release-unsigned.apk
+        debug: false
